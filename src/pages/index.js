@@ -4,13 +4,14 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import BookItem from "../components/BookItem"
 
 const IndexPage = (props) => {
   console.log(props)
   return (
     <Layout>
       {props.data.allBook.edges.map(edge =>(
-        <div key={edge.node.id}>
+        <BookItem key={edge.node.id}>
           <h2>
             {edge.node.title} - <small>{edge.node.author.name}</small>
           </h2>
@@ -20,7 +21,7 @@ const IndexPage = (props) => {
           <Link to={`/book/${edge.node.id}`}>
             Joins conversations
           </Link>
-        </div>
+        </BookItem>
       ))}
     </Layout>
   );
