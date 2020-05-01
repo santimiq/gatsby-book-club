@@ -7,7 +7,7 @@ const BookTemplate = (props) => {
   return(
     <Layout>
       <BookItem
-      bookCover={props.pageContext.imageURL}
+      bookCover={props.pageContext.localImage.childImageSharp.fixed}
       bookTitle={props.pageContext.title}
       bookSummary={props.pageContext.summary}
       authorName={props.pageContext.author.name} />
